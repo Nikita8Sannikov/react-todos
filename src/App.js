@@ -20,11 +20,19 @@ function App() {
   )
   }
 
-  return (<div className="wrapper">
+  function removeTodo(id) {
+    setTodos(todos.filter(todo => todo.id !== id))
+  }
+
+  return (
+    <Context.Provider value={{removeTodo: removeTodo}}>
+  <div className="wrapper">
     <h1>React todo</h1>
 
     <TodoList todos={todos} onToggle={toggleTodo}/>
-  </div>)
+  </div>
+  </Context.Provider>
+  )
 }
 
 export default App
