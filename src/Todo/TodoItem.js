@@ -25,10 +25,11 @@ function TodoItem({todo, index}){
             <input type="checkbox" style={styles.input}/>
             
             <strong>{ index+1 }</strong>
+            &nbsp;
             {todo.title}
         </span>
 
-        <button>&times;</button>
+        <button className="rm">&times;</button>
     </li>
     )
 }
